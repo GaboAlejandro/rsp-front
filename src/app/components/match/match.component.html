@@ -1,0 +1,60 @@
+<body>
+  <h1>Rock, Paper, or Scissors?</h1>
+  
+  <p> The Rules -> <strong>Rock</strong> beats <strong>scissors</strong>, <strong>scissors</strong> beats <strong>paper</strong>, and <strong>paper</strong> beats <strong>rock</strong>.</p>
+  
+  <div class="scoreboard">
+    <h2>Scoreboard</h2>
+    <table>
+      <tbody>
+      <tr>
+        <td id="humanScore">{{wins1}}</td>
+        <td id="computerScore">{{wins2}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <th>{{p1?.name}} </th>
+        <th>{{p2?.name}} </th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+  <h2>Round : {{roundsp}}</h2>
+  <h2>{{ msj }} </h2>
+  
+  <div class="game">
+  
+    <div class="action rock" id="rock">
+      <span   (click)='game(1)' class="fa fa-hand-rock-o"></span>
+    </div>
+  
+    <div class="action paper" id="paper">
+      <span (click)='game(2)' class="fa fa-hand-paper-o"></span>
+    </div>
+    <div class="action scissors" id="scissors">
+      <span (click)='game(3)' class="fa fa-hand-scissors-o"></span>
+    </div>
+  
+    <div class="connection spock--rock">
+      <span class="stem">
+        <span class="head"></span>           </span>
+    </div>
+  
+    <div class="connection paper--rock">
+      <span class="stem">
+        <span class="head"></span>           </span>
+    </div>
+  
+    <div class="connection paper--spock">
+      <span class="stem">
+        <span class="head"></span>           </span>
+    </div>
+  
+  </div>
+  
+  
+  <div id="status"></div>
+  
+  </body>
+  

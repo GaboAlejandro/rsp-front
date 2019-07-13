@@ -1,0 +1,49 @@
+.zoom-pager {
+  background: black;
+}
+
+.zoom-pager__container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.zoom-pager__page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  pointer-events: none;
+}
+.zoom-pager__page.active {
+  z-index: 2;
+  pointer-events: all;
+}
+.zoom-pager__page.next {
+  z-index: 1;
+}
+.zoom-pager__page.prev {
+  z-index: 3;
+}
+
+/*This is styling purely for the visual effect and not for the actual paging*/
+.text-page {
+  padding: 200px;
+  box-sizing: border-box;
+  font-size: 30px;
+  height: 100%;
+  overflow: auto;
+  color: white;
+  background-color: black;
+}
+.text-page p {
+  margin-bottom: 50px;
+}
+
+.image-page img {
+  width: 100%;
+}

@@ -1,0 +1,206 @@
+body {
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+  background: black;
+  color: lime;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+strong {
+  text-decoration: underline;
+}
+
+button {
+  background: lime;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  font-family: monospace;
+  font-weight: bold;
+}
+button:active {
+  background: green;
+}
+
+.scoreboard {
+  width: 14em;
+  margin: auto;
+  border: 1px solid lime;
+}
+.scoreboard h2 {
+  border-bottom: 1px solid lime;
+  margin: 0;
+  padding: 10px;
+}
+.scoreboard table {
+  margin: 10px auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+.scoreboard th, .scoreboard td {
+  text-align: center;
+}
+.scoreboard td {
+  font-size: 3em;
+  padding: 0 20px;
+}
+
+#status {
+  margin-top: 20px;
+}
+
+
+.game {
+  top: 65%;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-left: 43%;
+}
+
+.action {
+  top: 90px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  width: 66.6666666667px;
+  height: 66.6666666667px;
+  position: absolute;
+  display: block;
+  color: #fff;
+  border-radius: 66.6666666667px;
+  border: 2px solid #fff;
+  background-color: #6365a9;
+  box-shadow: 0 0 5px #1e2039;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  transition: all 400ms ease-in-out;
+}
+.action:hover {
+  background: #fedd31;
+}
+.action.active {
+  border-color: #fedd31;
+}
+.action .fa {
+  font-size: 33.3333333333px;
+  line-height: 66.6666666667px;
+  text-shadow: -1px -1px 0 #42467b, 1px -1px 0 #42467b, -1px 1px 0 #42467b, 1px 1px 0 #42467b;
+}
+
+.rock {
+  left: 50%;
+  top: 0;
+}
+.rock:hover {
+  -webkit-transform: translate3d(-50%, -60%, 0);
+  transform: translate3d(-50%, -60%, 0);
+}
+
+.paper {
+  left: 0%;
+  top: 38.89%;
+
+}
+.paper:hover {
+  -webkit-transform: translate3d(-60%, -60%, 0);
+  transform: translate3d(-60%, -60%, 0);
+
+}
+
+.scissors {
+  left: 100%;
+  top: 38.89%;
+
+}
+.scissors:hover {
+  -webkit-transform: translate3d(-40%, -60%, 0);
+  transform: translate3d(-40%, -60%, 0);
+}
+
+
+.connection.spock--rock {
+  -webkit-transform: rotate(140deg);
+  transform: rotate(140deg);
+  left: 33.3333333333px;
+  top: calc(38.89% - 33.3333333333px);
+}
+.connection.spock--rock .stem {
+  width: 33.3333333333px;
+}
+
+.connection.paper--rock {
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  top: calc(38.89% - 33.3333333333px);
+  left: calc(100% - 66.6666666667px);
+}
+.connection.paper--rock .stem {
+  width: 33.3333333333px;
+}
+
+.connection.rock--scissors {
+  -webkit-transform: rotate(-110deg);
+  transform: rotate(-110deg);
+  top: 100px;
+  left: calc(50% - 27.7777777778px);
+}
+.connection.rock--scissors .stem {
+  width: 120px;
+}
+
+.connection.paper--spock {
+  top: 38.89%;
+  left: calc(50% - 50px);
+}
+.connection.paper--spock .stem {
+  width: 100px;
+}
+
+.connection.spock--scissors {
+  -webkit-transform: rotate(-140deg);
+  transform: rotate(-140deg);
+  top: calc(38.89% + 66.6666666667px);
+  left: 22.9885057471px;
+}
+.connection.spock--scissors .stem {
+  width: 113.3333333333px;
+}
+
+
+.connection {
+  display: block;
+  position: absolute;
+  transition: all 400ms ease-in-out;
+}
+.connection.active .stem {
+  background-color: #fedd31;
+}
+.connection.active .head {
+  border-color: transparent transparent #fedd31 transparent;
+}
+.connection .stem {
+  display: block;
+  position: relative;
+  height: 2px;
+  background-color: #fff;
+}
+.connection .head {
+  display: block;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 0px;
+  height: 0px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  border-style: solid;
+  border-width: 0 3px 8px 3px;
+  border-color: transparent transparent #fff transparent;
+}
+
+
