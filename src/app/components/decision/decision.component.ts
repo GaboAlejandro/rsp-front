@@ -39,7 +39,6 @@ export class DecisionComponent implements OnInit {
     });
     this.playersService.readPlayers().subscribe((data: Players[]) => {
       this.p = data[this.match.winner - 1];
-      console.log(this.p);
     });
 
 

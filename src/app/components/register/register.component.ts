@@ -88,7 +88,6 @@ export class RegisterComponent implements OnInit {
         alert('Ocurrió un error');
 
       });
-    console.log(this.matches);
     this.saveMatch();
     this.router.navigate(['match']);
   }

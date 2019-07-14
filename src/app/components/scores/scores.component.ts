@@ -16,10 +16,11 @@ export class ScoresComponent implements OnInit {
   private players: Players[];
   private rounds: Rounds[];
   private match: Matches;
-  constructor(private playersService: PlayersService, private matchService: MatchService, private roundsService: RoundsService) { }
+  constructor(private playersService: PlayersService, private matchService: MatchService, private roundsService: RoundsService) {
+    this.refresh();
+  }
 
   ngOnInit() {
-    this.refresh();
   }
   refresh() {
     this.playersService.readPlayers().subscribe((data: Players[]) => {
@@ -43,7 +44,6 @@ export class ScoresComponent implements OnInit {
         this.matches[i][2] = playersOfMAtch;
         playersOfMAtch = this.players.filter(x => x.id === this.matches[i].winner);
         this.matches[i][3] = playersOfMAtch;
-        console.log(this.matches[i]);
 
       }
 
