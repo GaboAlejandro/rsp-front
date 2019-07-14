@@ -17,8 +17,12 @@ export class ScoresComponent implements OnInit {
   private rounds: Rounds[];
   private match: Matches;
   constructor(private playersService: PlayersService, private matchService: MatchService, private roundsService: RoundsService) {
-    this.refresh();
-  }
+    const counter = 1;
+    const interval = setInterval(() => {
+      this.refresh();
+      clearInterval(interval);
+
+    }, 2000);  }
 
   ngOnInit() {
   }
