@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatchComponent } from './components/match/match.component';
-import { BetweenlineComponent } from './components/betweenline/betweenline.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DecisionComponent } from './components/decision/decision.component';
+import { ScoresComponent } from './components/scores/scores.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     RegisterComponent,
     MatchComponent,
-    BetweenlineComponent
+    DecisionComponent,
+    ScoresComponent
   ],
   imports: [
     BrowserModule,

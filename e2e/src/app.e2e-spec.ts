@@ -1,5 +1,6 @@
+/*
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+/8*import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -21,3 +22,4 @@ describe('workspace-project App', () => {
     } as logging.Entry));
   });
 });
+*/

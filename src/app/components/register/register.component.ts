@@ -1,11 +1,11 @@
-import { Component, OnInit, EventEmitter,Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import * as $ from 'jquery';
 import { PlayersService } from '../../services/players/players.service';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Players} from "../../interface/players";
-import {Matches} from "../../interface/match";
-import {MatchService} from "../../services/match/match.service";
-import {Router} from "@angular/router";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Players} from '../../interface/players';
+import {Matches} from '../../interface/match';
+import {MatchService} from '../../services/match/match.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,22 +15,26 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   @Output() names = new EventEmitter<string>();
-  player1: Players ={
+  player1: Players = {
     id: null,
     name: null
   };
-  player2: Players ={
+  player2: Players = {
     id: null,
     name: null
   };
+  matches: Matches = {
+    id: null,
+    winner: 0,
+    created_at: ''
+  };
 
 
-
-  constructor(private playersService: PlayersService, private matchService:MatchService, private router: Router) {
+  constructor(private playersService: PlayersService, private matchService: MatchService, private router: Router) {
 
   }
 
-  PHP_API_SERVER = "http://127.0.0.1:8000";
+  PHP_API_SERVER = 'http://127.0.0.1:8000';
 
 
   ngOnInit() {
@@ -52,8 +56,8 @@ export class RegisterComponent implements OnInit {
       })
     });
 
-    $(document).ready(function(){
-      $(".btn-register").click(function(){
+    $(document).ready( function() {
+      $(".btn-register").click( function() {
         $(".register").fadeOut("slow")
         $(".thankYou").animate({
           left: "+=600"
@@ -64,31 +68,45 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  savePlayer(){
+  savePlayer() {
 
-    this.playersService.createPlayers(this.player1).subscribe((data)=>{
+    this.playersService.createPlayers(this.player1).subscribe((data) => {
 
 
       },
-      (error)=>{
+      (error) => {
         console.log(error);
         alert('Ocurrió un error');
 
       });
-    this.playersService.createPlayers(this.player2).subscribe((data)=>{
+    this.playersService.createPlayers(this.player2).subscribe((data) => {
 
 
       },
-      (error)=>{
+      (error) => {
         console.log(error);
         alert('Ocurrió un error');
 
       });
-
+    console.log(this.matches);
+    this.saveMatch();
     this.router.navigate(['match']);
   }
 
 
+  saveMatch() {
+
+    this.matchService.createMatch(this.matches).subscribe((data) => {
+
+
+      },
+      (error) => {
+        console.log(error);
+        alert('Ocurrió un error');
+
+      });
+
+  }
 
 
 }
