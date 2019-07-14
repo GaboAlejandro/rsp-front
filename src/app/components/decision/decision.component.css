@@ -1,0 +1,204 @@
+body{
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#blinkText {
+  font-size: 200px;
+}
+
+#blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+  font-family: lobster , cursive;
+  text-align: center;
+
+}
+
+@-webkit-keyframes blinker {
+  0% { color: red;
+    text-shadow: red 0px 0px 20px;
+    font-size: 500%}
+  50% { color: blue;
+    text-shadow: blue 0px 0px 20px;
+    font-size: 500%;}
+
+  100% { color: red;
+    text-shadow: red 0px 0px 20px;
+    font-size: 500%;}
+}
+
+h1 {
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: woosher;
+  color: white;
+}
+
+@-webkit-keyframes  woosher {
+  0% {
+    margin-left: 100%;
+    width: 300%;
+  }
+  100% {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
+.button {
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 18px;
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+
+}
+.button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  -webkit-transform: skewX(-45deg) translateX(0);
+  transform: skewX(-45deg) translateX(0);
+  -webkit-transition: none;
+  transition: none;
+}
+.button:hover {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 4px solid #000;
+}
+.button:hover:before {
+  -webkit-transform: skewX(-45deg) translateX(13.5em);
+  transform: skewX(-45deg) translateX(13.5em);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.text-color{
+  color: #c59532 !important;
+}
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+}
+.enter_site{
+  -webkit-animation: popIn;
+  -moz-animation: popIn;
+  animation: popIn;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay:2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: translateY(200px);
+  -moz-transform: translateY(200px);
+  -ms-transform: translateY(200px);
+  -o-transform: translateY(200px);
+  transform: translateY(200px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: center;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+
+
+}
+ul {
+  display: block;
+  list-style: none;
+  width: 100%;
+  clear: both;
+  padding: 10% 40%;
+
+}
+ul li {
+  display: block;
+  float: left;
+}
+
+
+.btn {
+  border-radius: 5px;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+.btn[class*="btn--base"] {
+  font-weight: 600;
+}
+.btn[class*="btn--primary"] {
+  background: black;
+  color: lime;
+}
+.btn[class*="btn--primary"]:hover {
+  background: black;
+}
+.btn[class*="btn--secondary"] {
+  background: transparent;
+  color: lime;
+  box-shadow: inset 0 0 0 2px lime;
+}
+.btn[class*="btn--secondary"]:hover {
+  background: lime;
+  color: black;
+}
+.btn[class*="btn--icon"] {
+  width: 100%;
+}
+.btn[class*="btn--icon"][class*="--linkedin"] {
+  background: #3f91aa;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.btn[class*="btn--icon"][class*="--linkedin"] span {
+  background: #30738c;
+  display: inline-block;
+  width: auto;
+  margin-left: -30px;
+  margin-right: 15px;
+  padding: 6px 15px 7px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.btn[class*="--rounded"] {
+  background: #000;
+  width: 2em;
+  height: 2em;
+  padding: 26px 28px;
+  color: #27e3ac;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 0.15em #27e3ac;
+  border: 4px solid #000;
+}
+
+.main--title {
+  padding: 1em 2em;
+  border-bottom: 2px solid #27e3ac;
+  text-transform: uppercase;
+}
+
