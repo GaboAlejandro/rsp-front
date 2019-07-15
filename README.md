@@ -14,7 +14,9 @@ ___
 ### Pre-Requesitos
 
 [ANGULAR] version 7.3.8.
+
 NPM
+
 GIT
 
 ### Para instalar y ejecutar proyecto
